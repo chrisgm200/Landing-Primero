@@ -1019,6 +1019,8 @@ EQUIPO
 
 .team-photo {
 
+	position: relative;
+
 	width: 100%;
 
 	aspect-ratio: 1 / 1;
@@ -1029,11 +1031,6 @@ EQUIPO
 
 	overflow: hidden;
 
-}
-
-
-.placeholder-photo {
-
 	background:
 		linear-gradient(
 			145deg,
@@ -1041,38 +1038,33 @@ EQUIPO
 			#d5e8e5
 		);
 
-	display: grid;
+}
 
-	place-items: center;
+
+.team-photo img {
+
+	position: absolute;
+
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: cover;
+
+	object-position: center top;
+
+	transition:
+		transform .6s var(--ease);
 
 }
 
 
-.placeholder-photo span {
+.team-card:hover .team-photo img {
 
-	width: 82px;
-	height: 82px;
-
-	display: grid;
-
-	place-items: center;
-
-	border-radius: 50%;
-
-	background: #fff;
-
-	color: var(--teal);
-
-	font-weight: 600;
-
-	font-size: 23px;
-
-	box-shadow:
-		0 8px 25px
-		rgba(0, 0, 0, .06);
+	transform: scale(1.05);
 
 }
-
 
 .team-info {
 	min-width: 0;
